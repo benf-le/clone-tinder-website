@@ -1,13 +1,183 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;700&display=swap");
+
+/*default*/
+* {
+    font-family: "Readex Pro", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)),
+    url('./img/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
 }
+
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/*default*/
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/*home*/
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home {
+    text-align: center;
+    padding: 20px;
+}
+
+.home h1 {
+    color: white;
+    font-size: 8vw;
+    padding-bottom: 1vw;
+}
+.primary-button {
+    background: linear-gradient(45deg, #fd2b75, #ff4b2b);
+    border: 0;
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 65px;
+    transition: 0.3s all;
+    text-anchor: middle;
+}
+
+.primary-button:hover {
+    background: linear-gradient(260deg, #fd2b75, #ff4b2b);
+}
+
+/*home*/
+
+/*navbar*/
+.navbar {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px 50px 40px;
+    width: 100%;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.navbar .links-navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .links-navbar ul li {
+    margin: 0 0 0 50px;
+}
+
+a.logo {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.navbar .links-navbar ul li a {
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.navbar .links-navbar ul li a:hover {
+    color: #d6002f;
+    text-decoration: underline;
+}
+
+.navbar .links-navbar ul li a.secondary-button {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .links-navbar ul li a.secondary-button:hover {
+    color: white;
+    background: black;
+    text-decoration: none;
+}
+/*button-login*/
+.login-button {
+    border: 0;
+    border-radius: 30px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 30px;
+    transition: 0.3s all;
+}
+
+.login-button:hover {
+    color: white;
+    background: black;
+    text-decoration: none;
+}
+
+/*navbar*/
+
+
+/* ----- hamburger menu ----- */
+.menu-hamburger {
+    display: none;
+}
+
+.button-burger-menu {
+    background: white;
+    border-radius: 5px;
+    height: 5px;
+    transition: all 0.5s;
+    width: 35px;
+}
+
+.button-burger-menu::before,
+.button-burger-menu::after {
+    background-color: white;
+    border-radius: 5px;
+    content: "";
+    height: 5px;
+    position: absolute;
+    transition: all 0.5s;
+    width: 35px;
+}
+
+.button-burger-menu::before {
+    transform: translateY(-10px);
+}
+
+.button-burger-menu::after {
+    transform: translateY(10px);
+}
+
+.open .button-burger-menu {
+    background-color: transparent;
+    transform: rotate(360deg);
+}
+
+.open .button-burger-menu::before {
+    transform: rotate(45deg);
+}
+
+.open .button-burger-menu::after {
+    transform: rotate(-45deg);
+}
+
+
