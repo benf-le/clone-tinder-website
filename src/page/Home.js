@@ -5,27 +5,29 @@ import { useState } from "react";
 const Home = () => {
 
     const [showModel, setShowModel] = useState(false)
+    const [isSignUp, setIsSignUp] = useState(true)
+
+
     const authToken = false
     const handleClick = () => {
         console.log("clicked")
         setShowModel(true)
+        setIsSignUp(true)
     }
     return (
-        <>
-            <Nav authToken={authToken}/>
             <div className="screen">
-            <div className="home">
-                <h1>Swipe Right</h1>
+                <Nav authToken={authToken} setIsSignUp={setIsSignUp}/>
+                <div className="home">
+                <h1 className="primary-title">Swipe Right</h1>
                 <button className="primary-button" onClick={handleClick}>
                     {authToken ? 'Signout' : 'Create Account'}
                 </button>
 
                 {showModel &&(
-                    <AuthModel setShowModel={setShowModel}/>
+                    <AuthModel setShowModel={setShowModel} isSignUp={isSignUp}/>
                 )}
             </div>
             </div>
-        </>
     )
 }
 export default Home

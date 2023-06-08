@@ -1,4 +1,9 @@
-const Nav = ({authToken}) => {
+
+const Nav = ({authToken, setIsSignUp}) => {
+
+    const handleClick = () => {
+        setIsSignUp(false)
+    };
     return(
         <div>
             <nav className="navbar">
@@ -14,7 +19,7 @@ const Nav = ({authToken}) => {
                         </li>
                         <li>
                             {/*<a href="login.html" className="secondary-button">Login</a>*/}
-                            {!authToken && <button className="login-button"> Login</button>}
+                            {!authToken && <button className="login-button" onClick={handleClick}> Login</button>}
                         </li>
                     </ul>
                 </div>

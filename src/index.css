@@ -5,14 +5,6 @@
     font-family: "Readex Pro", sans-serif;
 }
 
-body {
-    background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)),
-    url('./img/background.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    text-align: center;
-}
 
 * {
     list-style: none;
@@ -28,24 +20,24 @@ html {
     padding: 0;
 }
 
-/*home*/
+/* ----- home ----- */
 
 .screen {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    postion: overlay;
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)),
+    url('./img/background.jpeg');
 }
 
 .home {
     text-align: center;
-    padding: 20px;
+    padding-top: 30vh;
 }
 
-.home h1 {
+.primary-title {
     color: white;
-    font-size: 8vw;
+    font-size: 90px;
     padding-bottom: 1vw;
 }
 .primary-button {
@@ -62,11 +54,14 @@ html {
 
 .primary-button:hover {
     background: linear-gradient(260deg, #fd2b75, #ff4b2b);
+
+
+
 }
 
 /*home*/
 
-/*navbar*/
+/* ----- navbar ----- */
 .navbar {
     align-items: center;
     box-sizing: border-box;
@@ -180,4 +175,60 @@ a.logo {
     transform: rotate(-45deg);
 }
 
+/* ----- Auth Model ----- */
+.auth-model{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+    /*max-width: 360px;*/
+    width: clamp(200px,50%,360px);
+    /*height: clamp(290px,50%, 340px);*/
+    /*height: 600px;*/
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    transition: all 1s;
+    opacity: 1;
 
+}
+
+.auth-model .close-icon{
+    float: right;
+}
+
+.auth-model p{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.auth-model form{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.auth-model input[type=email],
+.auth-model input[type=password]{
+    padding: 8px;
+    margin: 8px;
+    font-size: 17px;
+}
+
+.submit-button{
+    color: rgb(121,119,119);
+    background: white;
+    /*color: #fe3175;*/
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid rgb(121,119,119);
+    margin: 6px;
+}
+.submit-button:hover{
+    color: rgb(48,48,48);
+    border: solid 2px rgb(48,48,48);
+}
