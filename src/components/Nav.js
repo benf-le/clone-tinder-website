@@ -1,9 +1,12 @@
 
-const Nav = ({authToken, setIsSignUp}) => {
+const Nav = ({setIsSignUp}) => {
 
     const handleClick = () => {
         setIsSignUp(false)
     };
+
+    const authToken = true
+
     return(
         <div>
             <nav className="navbar">
