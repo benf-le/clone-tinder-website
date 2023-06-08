@@ -1,5 +1,5 @@
 import {useState} from "react";
-import Nav from "../components/Nav";
+// import Nav from "../components/Nav";
 
 const OnBoarding = () => {
 
@@ -10,7 +10,7 @@ const OnBoarding = () => {
         dob_month:'',
         dob_year:'',
         show_gender:false,
-        gender_identity:'man',
+        gender_identify:'man',
         gender_interest:'woman',
         email:'',
         url:'',
@@ -23,19 +23,17 @@ const OnBoarding = () => {
     };
 
     const handleChange = (e) => {
-        console.log('e',e)
-        const value = e.target.value
+        const value = e.target.type ==='checkbox' ? e.target.checked : e.target.value
         const name = e.target.name
-
-        console.log('value'+value,'name'+name)
 
         setFormData((prevState) =>({
             ...prevState,
             [name]: value
         }))
 
-    };
 
+    };
+    console.log(formData)
 
     return (
         <>
@@ -89,7 +87,7 @@ const OnBoarding = () => {
                                 name="gender_identify"
                                 value="man"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_identify ==='man'}
                             />
                             <label htmlFor="man-gender-identify">Man</label>
 
@@ -99,7 +97,7 @@ const OnBoarding = () => {
                                 name="gender_identify"
                                 value="woman"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_identify ==='woman'}
                             />
                             <label htmlFor="woman-gender-identify">Woman</label>
 
@@ -109,20 +107,19 @@ const OnBoarding = () => {
                                 name="gender_identify"
                                 value="more"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_identify ==='more'}
                             />
                             <label htmlFor="more-gender-identify">More</label>
 
                         </div>
 
-                        <label htmlFor="show-gender">Show gender on my profile</label>
+                        <label htmlFor="show_gender">Show gender on my profile</label>
                         <input
-                            id="show-gender"
+                            id="show_gender"
                             type="checkbox"
-                            name="show-gender"
-                            value="moder"
+                            name="show_gender"
                             onChange={handleChange}
-                            checked={false}
+                            checked={formData.show_gender}
                         />
 
                         <label>Show Me</label>
@@ -133,7 +130,7 @@ const OnBoarding = () => {
                                 name="gender_interest"
                                 value="man"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_interest ==='man'}
                             />
                             <label htmlFor="man-gender-interest">Man</label>
 
@@ -143,7 +140,7 @@ const OnBoarding = () => {
                                 name="gender_interest"
                                 value="woman"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_interest ==='woman'}
                             />
                             <label htmlFor="woman-gender-interest">Woman</label>
 
@@ -153,9 +150,9 @@ const OnBoarding = () => {
                                 name="gender_interest"
                                 value="everyone"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_interest ==='everyone'}
                             />
-                            <label htmlFor="more-gender-interest">Everyone</label>
+                            <label htmlFor="everyone-gender-interest">Everyone</label>
 
                         </div>
 

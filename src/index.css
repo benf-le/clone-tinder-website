@@ -238,7 +238,13 @@ a.logo {
 }
 
 /* ----- OnBoarding Page ----- */
+.onboarding{
+    border-top: solid 1px rgb(154,154,154);
+}
 
+.onboarding h2{
+    margin-top: 30px;
+}
 .onboarding form {
     display: flex;
     justify-content: center;
@@ -307,4 +313,12 @@ a.logo {
 
 .onboarding form input[type="submit"]:active {
     background-color: rgb(226,115,115);
+}
+
+.onboarding form .photo-container img{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
 }
