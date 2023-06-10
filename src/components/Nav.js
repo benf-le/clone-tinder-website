@@ -5,7 +5,7 @@ const Nav = ({setIsSignUp}) => {
         setIsSignUp(false)
     };
 
-    const authToken = true
+    const authToken = false
 
     return(
         <div>
