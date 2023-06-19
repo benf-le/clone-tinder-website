@@ -91,16 +91,18 @@ app.post('/login', async (req, res) => {
 
 
 
-app.get('/users', async (req, res) => {
+app.get('/gendered-users', async (req, res) => {
     const client = new MongoClient(uri)
+    const gender = req.body.gender
 
     try {
         await client.connect()
         const database = client.db('app-data')
         const users = database.collection('users')
+        const query = {gender_identify: { $eq: 'man'}}
 
-        const returnedUsers = await users.find().toArray()
-        res.json(returnedUsers)
+        const foundUsers = await users.find(query).toArray()
+        res.send(foundUsers)
     } finally {
         await client.close()
     }
@@ -141,6 +143,25 @@ app.put('/user', async (req, res) => {
 
     })
 
+
+
+app.get('/user', async (req, res) => {
+    const client = new MongoClient(uri)
+    const userId = req.query.userId
+ 
+    try {
+        await client.connect()
+        const database = client.db('app-data')
+        const users = database.collection('users')
+
+        const query ={user_id: userId}
+        const user = await users.findOne(query)
+        res.send(user)
+
+    } finally {
+        await client.close()
+    }
+})
 
 
 

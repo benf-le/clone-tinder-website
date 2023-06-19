@@ -316,6 +316,8 @@ a.logo {
 .dashboard {
     display: flex;
     justify-content: space-between;
+    /*overflow: hidden;*/
+
 }
 
 .dashboard .swipe-container {
@@ -325,6 +327,8 @@ a.logo {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+
 }
 
 .swipe {
